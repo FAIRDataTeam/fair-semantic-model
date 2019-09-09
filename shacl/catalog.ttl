@@ -1,6 +1,7 @@
 @prefix : <http://example.com/metadata#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 :Catalog a sh:NodeShape ;
     sh:targetClass dcat:Catalog ;
@@ -14,6 +15,8 @@
             sh:nodeKind sh:IRI ;
             sh:minCount 1 ;
             sh:maxCount 1 ;
+            sh:order 11 ;
+            sh:group :CatalogGroup ;
         ]
         [
             a sh:PropertyShape ;
@@ -21,5 +24,10 @@
             sh:description "Dataset metadata contained by the catalog" ;
             sh:path dcat:dataset ;
             sh:nodeKind sh:IRI ;
+            sh:order 12 ;
+            sh:group :CatalogGroup ;
         ]
     ) .
+
+:CatalogGroup a sh:PropertyGroup ;
+    rdfs:label "Catalog metadata" .

@@ -13,6 +13,7 @@
         sh:nodeKind sh:Literal ;
         sh:minCount 1 ;
         sh:uniqueLang true ;
+        sh:order 0 ;
     ] ;
     sh:property [
         a sh:PropertyShape ;
@@ -22,6 +23,7 @@
         sh:datatype xsd:dateTime ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
+        sh:order 1 ;
     ] ;
     sh:property [
         a sh:PropertyShape ;
@@ -31,6 +33,7 @@
         sh:datatype xsd:dateTime ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
+        sh:order 2 ;
     ] ;
     sh:property [
         a sh:PropertyShape ;
@@ -40,6 +43,7 @@
         sh:nodeKind sh:Literal ;
         sh:minCount 1 ;
         sh:maxCount 1 ;
+        sh:order 3 ;
     ] ;
     sh:property [
         a sh:PropertyShape ;
@@ -48,6 +52,7 @@
         sh:path dct:description ;
         sh:nodeKind sh:Literal ;
         sh:uniqueLang true ;
+        sh:order 4 ;
     ] ;
     sh:property [
         a sh:PropertyShape ;
@@ -56,6 +61,7 @@
         sh:path dct:publisher ;
         sh:node :Publisher ;
         sh:minCount 1 ;
+        sh:order 5 ;
     ] ;
     sh:property [
         a sh:PropertyShape ;
@@ -63,6 +69,7 @@
         sh:description "Language of the metadata content" ;
         sh:path dct:language ;
         sh:nodeKind sh:IRI ;
+        sh:order 6 ;
     ] ;
     sh:property [
         a sh:PropertyShape ;
@@ -70,6 +77,7 @@
         sh:description "License document of the metadata" ;
         sh:path dct:license ;
         sh:nodeKind sh:IRI ;
+        sh:order 7 ;
     ] .
 
 :Publisher a sh:NodeShape ;

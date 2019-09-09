@@ -1,6 +1,7 @@
 @prefix : <http://example.com/metadata#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix r3d: <http://www.re3data.org/schema/3-0#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 :Repository a sh:NodeShape ;
     sh:targetClass r3d:Repository ;
@@ -12,5 +13,10 @@
             sh:description "Catalog metadata contained by the repository" ;
             sh:path r3d:dataCatalog ;
             sh:nodeKind sh:IRI ;
+            sh:order 11 ;
+            sh:group :RepositoryGroup ;
         ]
     ) .
+
+:RepositoryGroup a sh:PropertyGroup ;
+    rdfs:label "Repository metadata" .

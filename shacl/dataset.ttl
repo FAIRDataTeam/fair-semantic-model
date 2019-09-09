@@ -1,6 +1,7 @@
 @prefix : <http://example.com/metadata#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 :Dataset a sh:NodeShape ;
     sh:targetClass dcat:Dataset ;
@@ -13,6 +14,8 @@
             sh:path dcat:theme ;
             sh:nodeKind sh:IRI ;
             sh:minCount 1 ;
+            sh:order 11 ;
+            sh:group :DatasetGroup ;
         ]
         [
             a sh:PropertyShape ;
@@ -20,6 +23,8 @@
             sh:description "Human readable keywords that describe the metadata" ;
             sh:path dcat:keyword ;
             sh:nodeKind sh:Literal ;
+            sh:order 12 ;
+            sh:group :DatasetGroup ;
         ]
         [
             a sh:PropertyShape ;
@@ -28,6 +33,8 @@
             sh:path dcat:contactPoint ;
             sh:nodeKind sh:IRI ;
             sh:maxCount 1 ;
+            sh:order 13 ;
+            sh:group :DatasetGroup ;
         ]
         [
             a sh:PropertyShape ;
@@ -36,6 +43,8 @@
             sh:path dcat:landingPage ;
             sh:nodeKind sh:IRI ;
             sh:maxCount 1 ;
+            sh:order 14 ;
+            sh:group :DatasetGroup ;
         ]
         [
             a sh:PropertyShape ;
@@ -43,5 +52,10 @@
             sh:description "Distribution metadata contained by the dataset" ;
             sh:path dcat:distribution ;
             sh:nodeKind sh:IRI ;
+            sh:order 15 ;
+            sh:group :DatasetGroup ;
         ]
     ) .
+
+:DatasetGroup a sh:PropertyGroup ;
+    rdfs:label "Dataset metadata" .

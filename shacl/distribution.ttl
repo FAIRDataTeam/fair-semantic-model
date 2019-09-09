@@ -2,6 +2,7 @@
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 :Distribution a sh:NodeShape ;
     sh:targetClass dcat:Distribution ;
@@ -24,6 +25,8 @@
             sh:nodeKind sh:IRI ;
             sh:minCount 1 ;
             sh:maxCount 1 ;
+            sh:order 11 ;
+            sh:group :DistributionGroup ;
         ]
         [
             a sh:PropertyShape ;
@@ -34,6 +37,8 @@
             sh:pattern "\\S+?\\/(?:\\S+|\\*)" ;
             sh:minCount 1 ;
             sh:MaxCount 1 ;
+            sh:order 12 ;
+            sh:group :DistributionGroup ;
         ]
         [
             a sh:PropertyShape ;
@@ -42,6 +47,8 @@
             sh:path dcat:format ;
             sh:nodeKind sh:Literal ;
             sh:maxCount 1 ;
+            sh:order 13 ;
+            sh:group :DistributionGroup ;
         ]
         [
             a sh:PropertyShape ;
@@ -51,5 +58,10 @@
             sh:datatype xsd:int ;
             sh:minExclusive 0 ;
             sh:maxCount 1 ;
+            sh:order 14 ;
+            sh:group :DistributionGroup ;
         ]
     ) .
+
+:DistributionGroup a sh:PropertyGroup ;
+    rdfs:label "Distribution metadata" .
