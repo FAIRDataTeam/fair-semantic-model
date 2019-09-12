@@ -1,0 +1,29 @@
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix lang: <https://id.loc.gov/vocabulary/iso639-1/> .
+
+# subject is a self-referencing uri
+<> a dcat:Catalog ;
+    dct:title "My first repository metadata" ;
+
+    # dct:issued is generated server side, should not be set by user
+    # dct:modified is generated server side, should not be set by user
+
+    dct:version "1" ;
+
+    dct:description """The first instance of repository metadata that is created""" ;
+
+    dct:publisher <https://orcid.org/1234-4321-1234-4321> ; # agent iri should be requested in the form
+
+    dct:language lang:en ; # from the list of possible ISO639-1 IRIs
+
+    dct:license <https://creativecommons.org/publicdomain/zero/1.0/> ;
+
+    dcat:themeTaxonomy <https://dbpedia.org/> .
+
+    # dcat:dataset is generated server side, should not be set by user
+
+# the agent information could be derived from the remote resource
+# foaf:Person is a subtype of foaf:Agent
+<https://orcid.org/1234-4321-1234-4321> a foaf:Person ;
+    foaf:name "Me" .
